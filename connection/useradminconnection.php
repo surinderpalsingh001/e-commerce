@@ -1,10 +1,13 @@
 <?php
+$dbconfig = include('config/db.php');
+
 #CREATE CONSTANTS
-define('DB_USER','root');
-define('DB_PASS',"");
-define('DB_HOST','127.0.0.1');
+define('DB_USER',$dbconfig["DB_USER"]);
+echo $dbconfig["DB_USER"];
+define('DB_PASS',$dbconfig["DB_PASS"]);
+define('DB_HOST',$dbconfig["DB_HOST"]);
 //define('DB_PORT','3306');
-define('DB_NAME','useradmindb');
+define('DB_NAME',$dbconfig["DB_NAME"]);
 
 #CREATE CONNECTION
 

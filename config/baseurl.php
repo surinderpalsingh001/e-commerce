@@ -1,4 +1,4 @@
 <?php
 
-$baseUrl = 'http://'.$_SERVER['SERVER_NAME']."/myprojects/";
+$baseUrl = 'http://'.$_SERVER['SERVER_NAME']."/e-commerce/";
 ?>
