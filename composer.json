@@ -1,0 +1,12 @@
+{
+    "name": "a/project1",
+    "autoload": {
+        "psr-4": {
+            "A\\Project1\\": "src/",
+            "Classes\\":"class/"
+        }
+    },
+    "require": {
+        "symfony/var-dumper": "^6.2"
+    }
+}
