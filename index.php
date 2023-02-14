@@ -7,6 +7,7 @@ include('connection/useradminconnection.php');
 include('config/baseurl.php');
 include('class/categorycontroller.php');
 include('class/helper.php');
+dump($_SERVER);
 $route = $_SERVER['PATH_INFO'];
 
 $route = [
