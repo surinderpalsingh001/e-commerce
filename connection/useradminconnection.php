@@ -3,7 +3,6 @@ $dbconfig = include('config/db.php');
 
 #CREATE CONSTANTS
 define('DB_USER',$dbconfig["DB_USER"]);
-echo $dbconfig["DB_USER"];
 define('DB_PASS',$dbconfig["DB_PASS"]);
 define('DB_HOST',$dbconfig["DB_HOST"]);
 //define('DB_PORT','3306');
@@ -22,3 +21,6 @@ try
     echo "error: ".$e->getMessage();
   }
 ?>
+
+
+helo 222
