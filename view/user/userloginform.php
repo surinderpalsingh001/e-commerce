@@ -38,7 +38,7 @@ if (isset($_POST['login']))
                         $firstUser = null;
                         foreach ($users as $user) 
                         {
-                          dd($user);
+                          
                           if ($user['isadmin'] == '0' && password_verify($password,$user['password']))
                           {
                             $_SESSION['admin']['adm_id'] = $user['id'];
