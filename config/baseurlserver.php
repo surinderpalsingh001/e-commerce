@@ -1,5 +1,5 @@
 <?php
 
- $baseUrl1 = 'http://'.$_SERVER['SERVER_NAME'];
+ $baseUrl = 'http://'.$_SERVER['SERVER_NAME'];
 
 ?>
