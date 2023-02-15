@@ -8,23 +8,23 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>assets/css/cssadmin/adminlte.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/assets/css/cssadmin/adminlte.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="<?php echo $baseUrl; ?>plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="<?php echo $baseUrl; ?>e-commerce/plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -83,7 +83,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="<?php echo $baseUrl; ?>dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="<?php echo $baseUrl; ?>e-commerce/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -99,7 +99,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="<?php echo $baseUrl; ?>dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="<?php echo $baseUrl; ?>e-commerce/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -115,7 +115,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="<?php echo $baseUrl; ?>dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="<?php echo $baseUrl; ?>e-commerce/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
