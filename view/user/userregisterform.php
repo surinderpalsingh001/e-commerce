@@ -46,7 +46,7 @@ session_start();
          {
              $msg = "Image Not Uploaded";
          }
-         $sql = "INSERT INTO useradmindatas (name,email,username,password,image)
+         $sql = "INSERT INTO useradmindata (name,email,username,password,image)
          VALUES ('$name','$email','$username','$password','".basename($image)."')";
          $query = $dbh->exec($sql);
         $data = ob_get_clean();
