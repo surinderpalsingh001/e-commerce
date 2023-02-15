@@ -112,7 +112,7 @@ if (isset($_POST['login']))
               <input type="password" class="form-control" id="exampleInputPassword1" name="password">
             </div>
             <button type="submit" class="col-lg-5 btn btn-primary" name="login">Login</button>
-            <button type="submit" class="offset col-lg-6 btn btn-primary" name="register">Sign up</button>
+            <a href="<?php echo $baseUrl; ?>index.php/user/signup" class="offset col-lg-6 btn btn-primary" name="register">Sign Up</a>
           </form>
         </div>
     </div>
