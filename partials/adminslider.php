@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="<?php echo $baseUrl; ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="<?php echo $baseUrl; ?>e-commerce/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?php echo $baseUrl; ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="<?php echo $baseUrl; ?>e-commerce/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -36,7 +36,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="<?php echo $baseUrl; ?>index.php/admin/pdtcontroller" class="nav-link active">
+            <a href="<?php echo $baseUrl; ?>e-commerce/index.php/admin/pdtcontroller" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 All Categories
@@ -53,25 +53,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo $baseUrl; ?>index.php/admin/cat" class="nav-link">
+                <a href="<?php echo $baseUrl; ?>e-commerce/index.php/admin/cat" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Categories</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo $baseUrl; ?>index.php/admin/edit" class="nav-link">
+                <a href="<?php echo $baseUrl; ?>e-commerce/index.php/admin/edit" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Edit Categories</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo $baseUrl; ?>index.php/admin/varients" class="nav-link">
+                <a href="<?php echo $baseUrl; ?>e-commerce/index.php/admin/varients" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Product Varients</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo $baseUrl; ?>index.php/admin/viewvarient" class="nav-link">
+                <a href="<?php echo $baseUrl; ?>e-commerce/index.php/admin/viewvarient" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>View Varients</p>
                 </a>
