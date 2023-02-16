@@ -52,7 +52,7 @@ session_start();
         $data = ob_get_clean();
         //dd($data);
         ob_clean();
-        header("location:".$baseUrl."index.php/user/login");
+        header("location:".$baseUrl."e-commerce/index.php/user/login");
         exit();
         //header("location:".$baseUrl."index.php/user/login");
         //dd($baseUrl."index.php/user/login");

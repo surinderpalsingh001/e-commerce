@@ -5,7 +5,6 @@ if (isset($_POST['login']))
             if(isset($_POST['username']) && isset($_POST['password']))
             {
                 $username = $_POST['username'];
-                $email = $_POST['email'];
                 $password = $_POST['password'];
         
                 $data = "username=".$username;
@@ -21,12 +20,12 @@ if (isset($_POST['login']))
                 {
                     dump($password);
                     $em = "password is required";
-                    header("Location:".$baseUrl."/index.php/user/login?error=$em&$data");
+                    header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
                     exit;
                 }
                 else
                 {
-                    $sql = "SELECT * FROM useradmindata WHERE username = ? ";
+                    $sql = "SELECT * FROM useradmindatas WHERE username = ? ";
                     $stmt = $dbh->prepare($sql);
                     $stmt->execute([$username]);
                     dump($stmt->rowCount());
@@ -38,19 +37,19 @@ if (isset($_POST['login']))
                         $firstUser = null;
                         foreach ($users as $user) 
                         {
-                          
-                          if ($user['isadmin'] == '0' && password_verify($password,$user['password']))
+                          //dd($user);
+                          if ($user['isadmin'] == '1' && password_verify($password,$user['password']))
                           {
                             $_SESSION['admin']['adm_id'] = $user['id'];
                             $_SESSION['admin']['username'] = $user['username'];
-                            header("location:".$baseUrl."index.php/admin/admhome");
+                            header("location:".$baseUrl."e-commerce/index.php/admin/admhome");
                             exit;
                           }
-                          else if ($user['isadmin'] == '1' && password_verify($password,$user['password']))
+                          else if ($user['isadmin'] == '0' && password_verify($password,$user['password']))
                           {                            
                             $_SESSION['user']['user_id'] = $user['id'];
                             $_SESSION['user']['username'] = $user['username'];
-                            header("location:".$baseUrl."index.php/user/profile");
+                            header("location:".$baseUrl."e-commerce/index.php/user/profile");
                             exit;
                           }
                           else

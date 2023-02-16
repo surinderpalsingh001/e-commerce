@@ -1,8 +1,9 @@
 <?php
 session_start();
 //$adm_id = $_SESSION['adm_id'];
-//$user['id'] = $_SESSION['admin']['adm_id'];
-//$user['username'] = $_SESSION['admin']['username'];
+
+$user['id'] = $_SESSION['admin']['adm_id'];
+$user['username'] = $_SESSION['admin']['username'];
 include('partials/adminheader.php');
 include('partials/adminslider.php');
 //include('../../config/baseurl.php');
