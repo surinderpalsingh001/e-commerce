@@ -60,24 +60,7 @@ if (isset($_POST['login']))
                             exit();
                           }
                         }
-                        // // dump($user);
-                        // $name =  $user['name'];
-                        // $username =  $user['username'];
-                        // $pass =  $user['password'];
-                        // $id =  $user['id'];
-                        // $image =  $user['image'];
-        
-                        // if($username === $username)
-                        // {
-                        //    if(password_verify($password, $user['password']))
-                        //    {
-                        //         $_SESSION['image'] = $image;
-                        //         $_SESSION['id'] = $id;
-                        //         $_SESSION['name'] = $name;
-                        //         $_SESSION['username'] = $username;
-                        //         $_SESSION['email'] = $email;
-                        //     }
-                        // }
+                        
                     }
                 }
             }
