@@ -25,3 +25,7 @@ FULL JOIN
 SELF JOIN
 
     SELECT c.title as parent, cc.title as child from categories c  INNER JOIN categories cc WHERE c.id = cc.parent_id;
+
+    ssh -o PubKeyAuthentication=no -p 65002 u682479975@153.92.7.160
+    cd public_html/ecom
+    git pull

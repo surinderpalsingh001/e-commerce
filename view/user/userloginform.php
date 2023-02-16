@@ -13,7 +13,7 @@ if (isset($_POST['login']))
                 {
                     dump($username);
                     $em = "User name is required";
-                    header("Location:".$baseUrl."/index.php/user/login?error=$em&$data");
+                    header("Location:".$baseUrl."e-commerce//index.php/user/login?error=$em&$data");
                     exit;
                 }
                 else if(empty($password))
@@ -21,6 +21,7 @@ if (isset($_POST['login']))
                     dump($password);
                     $em = "password is required";
                     header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
+                    header("Location:".$baseUrl."e-commerce//index.php/user/login?error=$em&$data");
                     exit;
                 }
                 else
@@ -55,7 +56,7 @@ if (isset($_POST['login']))
                           else
                           {
                             $em = "Incorect User name or password";
-                            header("Location: admlogin.php?error=$em&$data");
+                            header("Location:".$baseUrl." e-commerce/admlogin.php?error=$em&$data");
                             exit();
                           }
                         }
