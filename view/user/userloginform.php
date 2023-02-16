@@ -5,7 +5,7 @@ if (isset($_POST['login']))
             if(isset($_POST['username']) && isset($_POST['password']))
             {
                 $username = $_POST['username'];
-                $email = $_POST['email'];
+                
                 $password = $_POST['password'];
         
                 $data = "username=".$username;
@@ -26,7 +26,7 @@ if (isset($_POST['login']))
                 }
                 else
                 {
-                    $sql = "SELECT * FROM useradmindata WHERE username = ? ";
+                    $sql = "SELECT * FROM useradmindatas WHERE username = ? ";
                     $stmt = $dbh->prepare($sql);
                     $stmt->execute([$username]);
                     dump($stmt->rowCount());
@@ -56,7 +56,7 @@ if (isset($_POST['login']))
                           else
                           {
                             $em = "Incorect User name or password";
-                            header("Location: admlogin.php?error=$em&$data");
+                            header("Location:".$baseUrl." e-commerce/admlogin.php?error=$em&$data");
                             exit();
                           }
                         }

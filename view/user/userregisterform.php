@@ -46,13 +46,13 @@ session_start();
          {
              $msg = "Image Not Uploaded";
          }
-         $sql = "INSERT INTO useradmindata (name,email,username,password,image)
+         $sql = "INSERT INTO useradmindatas (name,email,username,password,image)
          VALUES ('$name','$email','$username','$password','".basename($image)."')";
          $query = $dbh->exec($sql);
         $data = ob_get_clean();
         //dd($data);
         ob_clean();
-        header("location:".$baseUrl."index.php/user/login");
+        header("location:".$baseUrl."e-commerce/index.php/user/login");
         exit();
         //header("location:".$baseUrl."index.php/user/login");
         //dd($baseUrl."index.php/user/login");
