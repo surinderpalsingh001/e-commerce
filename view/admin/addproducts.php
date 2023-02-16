@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['subproduct'])
                     <select class="form-control" name="sub_category_id">
                       <option>Sub Categories</option>
                     <?php
-                        $sql1 = "SELECT * FROM products WHERE id";
+                        $sql1 = "SELECT * FROM categories WHERE parent_id = :sub_cat";
                         $query1 = $dbh->prepare($sql1);
                         $query1->execute();
                         $results1 = $query1->fetchAll();
