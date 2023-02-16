@@ -14,7 +14,7 @@ class Helper
     }
 }
 function getUserById($id, $db){
-    $sql = "SELECT * FROM users WHERE id = ?";
+    $sql = "SELECT * FROM useradmindatas WHERE id = ?";
 	$stmt = $db->prepare($sql);
 	$stmt->execute([$id]);
     

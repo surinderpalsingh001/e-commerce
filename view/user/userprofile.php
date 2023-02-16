@@ -1,87 +1,56 @@
 <?php
 session_start();
-//$user_id = $_SESSION['user_id'];
-$user['id'] = $_SESSION['user']['user_id'];
-$user['username'] = $_SESSION['user']['username'];
-?>
-
-<div class="content-wrapper">
-    <!-- Main content -->
-    <section class="content mt-lg-4">
-      <div class="container-fluid">
-        <div class="row">
-          <!-- left column -->
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">User Record</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>ID</th>
-                        <th>Full Name</th>
-                        <th>Last Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Courses</th>
-                        <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                        <?php
-                            $query = "SELECT * FROM useradmindatas";
-                            $statement = $dbh->prepare($query);
-                            $statement->execute();
-
-                            $statement->setFetchMode(PDO::FETCH_ASSOC); //PDO::FETCH_ASSOC
-                            $result = $statement->fetchAll();
-                            if($result)
-                            {
-                                foreach($result as $row)
-                                {
-                                    ?>
-                                    
-                                    <td><img height="100" width="100" src="<?php echo asset($row['image'])?>" /></td>
-                                        <td><?php echo $row['id']; ?></td>
-                                        <td><?php echo $row['name']; ?></td>
-                                        <td><?php echo $row['username']; ?></td>
-                                        <td><?php echo $row['email']; ?></td>
-                                        
-                                        <td>
-                                        <a href="" class=" btn btn-primary ">
-                                        <i class="fa fa-user"></i>
-                                        </a>
-                                        <a href="" class=" btn btn-success ">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="<?php echo $baseUrl ;?>e-commerce/index.php/admin/record?id=<?php echo $row['id'];?>" class=" btn btn-danger ">
-                                        <i class=" fa fa-trash"></i>
-                                    </a>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                }
-                            }
-                            
-                        ?>
-                        </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-           
-                       
-             
-                
-    <br>
-    <br>
-
-    
+if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
 
 
-
+  $user = getUserById($_SESSION['id'], $dbh);
+  
+  
+   ?>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+      <?php if ($user) { ?>
+      <div class="d-flex justify-content-center align-items-center vh-100">
+        
+        <div class="shadow w-350 p-4 ">
+          <img width="200px" height="200px" src="<?php echo asset($user['image'])?>">
+              <table>
+              <tr>
+                  <td >FirstName:<?=$user['fname']?></td>
+              </tr>
+              <tr>
+                  <td>LastName:<?=$user['lastname']?></td>
+              </tr>
+              <tr>
+                  <td>UserName:<?=$user['username']?><td>
+              <tr>
+                 <td>Email:<?=$user['email']?></td>
+              </tr>
+              <tr>
+                  <td><a href="edit.php" class="btn btn-primary">Edit Profile</a>
+                  <a href="<?php echo $baseUrl;?>e-commerce/index.php/user/login" class="btn btn-warning">Logout</a></td>
+              </tr>
+  
+               
+              </table>
+      </div>
+      </div>
+      <?php }else { 
+       header("Location: <?php echo $baseUrl; ?>e-commerce/index.php/user/login.php");
+       exit;
+      } ?>
+  </body>
+  </html>
+  
+  <?php }else {
+    header("Location: login.php");
+    exit;
+  } ?>
