@@ -56,7 +56,7 @@ if (isset($_POST['login']))
                           else
                           {
                             $em = "Incorect User name or password";
-                            header("Location:".$baseUrl." e-commerce/admlogin.php?error=$em&$data");
+                            header("Location:".$baseUrl."e-commerce/admlogin.php?error=$em&$data");
                             exit();
                           }
                         }
