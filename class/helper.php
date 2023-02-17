@@ -9,21 +9,21 @@ class Helper
     public static function reditrect(string $location): void
     {
         global $baseUrl;
-        header("location: ".$baseUrl."index.php".$location);
+        header("location: ".$baseUrl."e-commerce/index.php".$location);
         exit();
     }
 }
-function getUserById($id, $db){
-
+function getUserById($id, $dbh)
+{
     $sql = "SELECT * FROM useradmindatas WHERE id = ?";
 
-	$stmt = $db->prepare($sql);
+	$stmt = $dbh->prepare($sql);
 	$stmt->execute([$id]);
     
     if($stmt->rowCount() == 1)
     {
-        $user = $stmt->fetch();
-        return $user;
+        $udata = $stmt->fetch();
+        return $udata;
     }
     else 
     {
@@ -32,7 +32,3 @@ function getUserById($id, $db){
 
 } 
 ?>
-
-
-?>
-

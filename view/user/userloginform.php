@@ -1,70 +1,69 @@
 <?php
 session_start();
 if (isset($_POST['login']))
+{
+  if(isset($_POST['username']) && isset($_POST['password']))
+  {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $data = "username=".$username;
+  
+    if(empty($username))
+    {
+        dump($username);
+        $em = "User name is required";
+        header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
+        exit;
+    }
+    else if(empty($password))
+    {
+        dump($password);
+        $em = "password is required";
+        header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
+        header("Location:".$baseUrl."e-commerce//index.php/user/login?error=$em&$data");
+        exit;
+    }
+    else
+    {
+      $sql = "SELECT * FROM useradmindatas WHERE username = ? ";
+      $stmt = $dbh->prepare($sql);
+      $stmt->execute([$username]);
+      dump($stmt->rowCount());
+
+      if($stmt->rowCount() >= 1)
+      {
+        $users = $stmt->fetchAll();
+        $firstUser = null;
+
+        foreach ($users as $user) 
         {
-            if(isset($_POST['username']) && isset($_POST['password']))
-            {
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-        
-                $data = "username=".$username;
-            
-                if(empty($username))
-                {
-                    dump($username);
-                    $em = "User name is required";
-                    header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
-                    exit;
-                }
-                else if(empty($password))
-                {
-                    dump($password);
-                    $em = "password is required";
-                    header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
-                    header("Location:".$baseUrl."e-commerce//index.php/user/login?error=$em&$data");
-                    exit;
-                }
-                else
-                {
-                    $sql = "SELECT * FROM useradmindatas WHERE username = ? ";
-                    $stmt = $dbh->prepare($sql);
-                    $stmt->execute([$username]);
-                    dump($stmt->rowCount());
-                    if($stmt->rowCount() >= 1)
-            
-                    {
-        
-                        $users = $stmt->fetchAll();
-                        $firstUser = null;
-                        foreach ($users as $user) 
-                        {
-                          //dd($user);
-                          if ($user['isadmin'] == '1' && password_verify($password,$user['password']))
-                          {
-                            $_SESSION['admin']['adm_id'] = $user['id'];
-                            $_SESSION['admin']['username'] = $user['username'];
-                            header("location:".$baseUrl."e-commerce/index.php/admin/admhome");
-                            exit;
-                          }
-                          else if ($user['isadmin'] == '0' && password_verify($password,$user['password']))
-                          {                            
-                            $_SESSION['user']['user_id'] = $user['id'];
-                            $_SESSION['user']['username'] = $user['username'];
-                            header("location:".$baseUrl."e-commerce/index.php/user/profile");
-                            exit;
-                          }
-                          else
-                          {
-                            $em = "Incorect User name or password";
-                            header("Location:".$baseUrl."e-commerce/admlogin.php?error=$em&$data");
-                            exit();
-                          }
-                        }
-                        
-                    }
-                }
-            }
+          if ($user['isadmin'] == '1' && password_verify($password,$user['password']))
+          {
+            $_SESSION['admin']['adm_id'] = $user['id'];
+            $_SESSION['admin']['username'] = $user['username'];
+            header("location:".$baseUrl."e-commerce/index.php/admin/admhome");
+            exit;
+          }
+          else if ($user['isadmin'] == '0' && password_verify($password,$user['password']))
+          {                            
+            $_SESSION['user']['user_id'] = $user['id'];
+            $_SESSION['user']['username'] = $user['username'];
+            header("location:".$baseUrl."e-commerce/index.php/user/profile");
+            exit;
+          }
+          else
+          {
+            $em = "Incorect User name or password";
+            header("Location:".$baseUrl."e-commerce/admlogin.php?error=$em&$data");
+            exit();
+          }
         }
+              
+      }
+    }
+  }
+}
 ?>
 
 
