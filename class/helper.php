@@ -17,15 +17,16 @@ function getUserById($id, $db){
 
     $sql = "SELECT * FROM useradmindatas WHERE id = ?";
 
-    $sql = "SELECT * FROM users WHERE id = ?";
-
 	$stmt = $db->prepare($sql);
 	$stmt->execute([$id]);
     
-    if($stmt->rowCount() == 1){
+    if($stmt->rowCount() == 1)
+    {
         $user = $stmt->fetch();
         return $user;
-    }else {
+    }
+    else 
+    {
         return 0;
     }
 

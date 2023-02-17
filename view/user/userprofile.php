@@ -2,10 +2,10 @@
 
 $user_id = $_SESSION['user_id'];
 if(!isset($user_id)){
-    header('location:login.php');
+    header("location:".$baseUrl."e-commerce/index.php/user/login");
  }
 
-if (isset($_SESSION['id']) && isset($_SESSION['fname'])) {
+if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
 
 $user = getUserById($_SESSION['id'], $dbh);
@@ -22,20 +22,20 @@ $user = getUserById($_SESSION['id'], $dbh);
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <?php if ($user) { ?>
+    <?php if ($user) 
+    { 
+        ?>
     <div class="d-flex justify-content-center align-items-center vh-100">
     	
     	<div class="shadow w-350 p-4 ">
     		<img width="200px" height="200px" src="<?php echo asset($user['image'])?>">
             <table>
             <tr>
-                <td >FirstName:<?=$user['fname']?></td>
-            </tr>
-            <tr>
-                <td>LastName:<?=$user['lastname']?></td>
+                <td >FirstName:<?=$user['name']?></td>
             </tr>
             <tr>
                 <td>UserName:<?=$user['username']?><td>
+            </tr>
             <tr>
                <td>Email:<?=$user['email']?></td>
             </tr>
@@ -49,13 +49,16 @@ $user = getUserById($_SESSION['id'], $dbh);
 		</div>
     </div>
     <?php }else { 
-     header("Location: <?php echo $baseUrl; ?>index.php/user/login.php");
+     header("Location:".$baseUrl."e-commerce/index.php/user/login");
      exit;
     } ?>
 </body>
 </html>
 
-<?php }else {
-	header("Location: login.php");
+<?php }
+else 
+{
+	header("Location:".$baseUrl."e-commerce/index.php/user/login");
 	exit;
-} ?>
+} 
+?>
