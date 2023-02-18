@@ -22,7 +22,7 @@ if (isset($user['id']) && isset($user['username']))
                     <table>
                         <tr>
                             <td>
-                                <img src="<?php echo $udata['image']; ?>">
+                                <img src="<?php echo asset($udata['image']); ?>">
                             </td>
                         </tr>
                         <tr>
