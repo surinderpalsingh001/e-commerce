@@ -43,15 +43,5 @@ if (isset($user['id']) && isset($user['username']))
         </div>
     <?php 
     }
-    // else
-    // { 
-    //     header("Location:".$baseUrl."e-commerce/index.php/user/login");
-    //     exit;
-    // }
 }
-// else 
-// {
-//     header("Location:".$baseUrl."e-commerce/index.php/user/login");
-//     exit;
-// } 
     ?>
