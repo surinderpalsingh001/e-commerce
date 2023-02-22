@@ -1,4 +1,5 @@
 <?php
+namespace Classes;
 include('partials/adminheader.php');
 include('partials/adminslider.php');
 $limit = 5;
@@ -13,7 +14,7 @@ else
 $offset = ($page - 1) * $limit;
 
 
-$obj = new addCat();
+$obj = new CategoryController();
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['del'])
 {
   $dbh = $obj->delcatog($_POST);
@@ -49,7 +50,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['del'])
                     $query = "SELECT * FROM categories WHERE parent_id=".$_GET['id']." ORDER BY id DESC LIMIT {$offset},{$limit}";
                     $stmt = $dbh->prepare($query);
                     $stmt->execute();
-                    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                    //$stmt->setFetchMode(PDO::FETCH_ASSOC);
                     $result = $stmt->fetchAll();
                     if($result)
                     {

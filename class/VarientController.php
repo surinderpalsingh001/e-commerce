@@ -1,7 +1,6 @@
 <?php
 namespace Classes;
 
-
 class VarientController{
 
     public $dbh;

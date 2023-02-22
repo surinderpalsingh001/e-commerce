@@ -1,5 +1,9 @@
 <?php
-class addCat
+namespace Classes;
+
+use Exception;
+
+class CategoryController
 {
     public $dbh;
     function __construct()
@@ -86,7 +90,7 @@ class addCat
                 }
 
             }
-            catch(PDOException $e)
+            catch(Exception $e)
             {
                 echo $e->getMessage();
             }
@@ -158,5 +162,28 @@ class addCat
 			echo "Images Uploaded Successfully";
 		}
     }
+
+
+    public function getSubCats($data)
+    {
+        $sql = "SELECT * FROM categories WHERE parent_id = ?";
+        $statement  = $this->dbh->prepare($sql);
+        $data = $statement->execute([$data['id']]);
+        $res = $statement->fetchAll();
+        echo json_encode($res);
+        exit();
+
+    }
+
+    public function getSubVar($data1){
+        $sql1 = "SELECT * FROM varientattributes WHERE last_varient_id = ?";
+        $statement1  = $this->dbh->prepare($sql1);
+        $data1 = $statement1->execute([$data1['id']]);
+        $res1 = $statement1->fetchAll();
+        echo json_encode($res1);
+        exit();
+
+    }
 }
+
 ?>

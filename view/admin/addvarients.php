@@ -97,10 +97,6 @@ include('partials/adminslider.php');
         console.log("Save Called",form, data);
         return false; 
     }
-
-    // New Section Add on 5/2/2023
-    
-// New Section Add on 5/2/2023
 </script>
 <?php
 include('partials/adminfooter.php');

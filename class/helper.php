@@ -1,4 +1,5 @@
 <?php
+namespace Classes;
 class Helper
 {
     /** 
@@ -9,7 +10,7 @@ class Helper
     public static function reditrect(string $location): void
     {
         global $baseUrl;
-        header("location: ".$baseUrl."e-commerce/index.php".$location);
+        header("location: ".$baseUrl."index.php".$location);
         exit();
     }
 }

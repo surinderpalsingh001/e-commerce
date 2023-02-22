@@ -1,7 +1,7 @@
 <?php
 include('partials/adminheader.php');
 include('partials/adminslider.php');
-$obj = new addCat();
+$obj = new CategoryController();
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['edit'])
 {
   $dbh = $obj->editcatog($_POST);

@@ -13,15 +13,15 @@ if (isset($_POST['login']))
     {
         dump($username);
         $em = "User name is required";
-        header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
+        header("Location:".$baseUrl."index.php/user/login?error=$em&$data");
         exit;
     }
     else if(empty($password))
     {
         dump($password);
         $em = "password is required";
-        header("Location:".$baseUrl."e-commerce/index.php/user/login?error=$em&$data");
-        header("Location:".$baseUrl."e-commerce//index.php/user/login?error=$em&$data");
+        header("Location:".$baseUrl."index.php/user/login?error=$em&$data");
+        header("Location:".$baseUrl."/index.php/user/login?error=$em&$data");
         exit;
     }
     else
@@ -42,20 +42,20 @@ if (isset($_POST['login']))
           {
             $_SESSION['admin']['adm_id'] = $user['id'];
             $_SESSION['admin']['username'] = $user['username'];
-            header("location:".$baseUrl."e-commerce/index.php/admin/admhome");
+            header("location:".$baseUrl."index.php/admin/admhome");
             exit;
           }
           else if ($user['isadmin'] == '0' && password_verify($password,$user['password']))
           {                            
             $_SESSION['user']['user_id'] = $user['id'];
             $_SESSION['user']['username'] = $user['username'];
-            header("location:".$baseUrl."e-commerce/index.php/user/profile");
+            header("location:".$baseUrl."index.php/user/profile");
             exit;
           }
           else
           {
             $em = "Incorect User name or password";
-            header("Location:".$baseUrl."e-commerce/admlogin.php?error=$em&$data");
+            header("Location:".$baseUrl."admlogin.php?error=$em&$data");
             exit();
           }
         }
@@ -94,7 +94,7 @@ if (isset($_POST['login']))
               <input type="password" class="form-control" id="exampleInputPassword1" name="password">
             </div>
             <button type="submit" class="col-lg-5 btn btn-primary" name="login">Login</button>
-            <a href="<?php echo $baseUrl; ?>e-commerce/index.php/user/signup" class="offset col-lg-6 btn btn-primary" name="register">Sign Up</a>
+            <a href="<?php echo $baseUrl; ?>index.php/user/signup" class="offset col-lg-6 btn btn-primary" name="register">Sign Up</a>
           </form>
         </div>
     </div>

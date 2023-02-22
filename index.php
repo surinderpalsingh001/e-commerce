@@ -1,12 +1,13 @@
 <?php
+use Classes\CategoryController;
 use Classes\VarientController;
 ob_start();
 include('vendor/autoload.php');
-
 include('connection/useradminconnection.php');
-include('config/baseurl.php');
-include('class/categorycontroller.php');
-include('class/helper.php');
+include('config/baseUrl.php');
+include('class/CategoryController.php');
+include('class/VarientController.php');
+include('class/Helper.php');
 //dump($_SERVER);
 $route = $_SERVER['PATH_INFO'];
 
@@ -28,7 +29,10 @@ $route = [
             "edit" => "/admin/editcategory.php",
             "varients" => "/admin/addvarients.php",
             "viewvarient" => "/admin/viewprodvar.php",
-            "varient/save"=>["method"=>"POST","controller"=>VarientController::class,"function"=>"save"]
+            "category/subcat"=>["method"=>"GET","controller"=>CategoryController::class,"function"=>"getSubcats"],
+            "category/subvar"=>["method"=>"GET","controller"=>CategoryController::class,"function"=>"getSubVar"],
+            "varient/save"=>["method"=>"POST","controller"=>VarientController::class,"function"=>"save"],
+            
         ]
 ];
 
@@ -67,6 +71,12 @@ else
         $obj =  new $controller();
        
         $obj->$function($_POST);
+        dd("Logic goes here", $controller ,$route[$routeArr[1]][$uri], new $class());
+    }
+    elseif($method=="GET" && $_SERVER['REQUEST_METHOD']=="GET"){
+        $obj =  new $controller();
+       
+        $obj->$function($_GET);
         dd("Logic goes here", $controller ,$route[$routeArr[1]][$uri], new $class());
     }
     else

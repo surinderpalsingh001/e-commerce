@@ -1,7 +1,8 @@
 <?php
+namespace Classes;
 include('partials/adminheader.php');
 include('partials/adminslider.php');
-$obj = new addCat();
+$obj = new CategoryController();
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['submit'])
 {
   $dbh = $obj->items($_POST);
