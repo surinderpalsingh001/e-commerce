@@ -31,7 +31,7 @@ if (isset($user['id']) && isset($user['username']))
                 <div class="container-fluid">
                     <div class="row">
                         <!-- left column -->
-                        <div class="col-md-6 mt-lg-4 offset-3">
+                        <div class="col-md-3 mt-lg-4 offset-1">
                             <!-- general form elements -->
                             <div class="card card-primary">
                                 <div class="card-header">
@@ -42,7 +42,7 @@ if (isset($user['id']) && isset($user['username']))
                                         <div class="col-md-5 mt-lg-4 offset-1">
                                             <img src="<?php echo asset($udata['image']); ?>" class="img-fluid rounded-start" alt="You Buy">
                                         </div>
-                                        <div class="col-md-3 offset-0 mt-lg-2">
+                                        <div class="col-md offset-0 mt-lg-2">
                                             <div class="card-body">
                                                 <table>
                                                     <tr>
@@ -65,6 +65,77 @@ if (isset($user['id']) && isset($user['username']))
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-3 mt-lg-4 ms-5">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Your Profile</h3>
+                                </div>
+                                <div class="card mb-3" style="max-width: 400px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-5 mt-lg-4 offset-1">
+                                            <img src="<?php echo asset($udata['image']); ?>" class="img-fluid rounded-start" alt="You Buy">
+                                        </div>
+                                        <div class="col-md offset-0 mt-lg-2">
+                                            <div class="card-body">
+                                                <table>
+                                                    <tr>
+                                                        <td class="card text-white bg-dark mb-2">Name:<?php echo $udata['name']; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="card text-white bg-dark mb-2">Username:<?php echo $udata['username']; ?><td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="card text-white bg-dark mb-2">Email:<?php echo $udata['email']; ?></td>
+                                                    </tr>
+                                                </table>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="edit.php" class="btn btn-primary">Edit Profile</a>
+                                    <a href="<?php echo $baseUrl; ?>index.php/user/login" class="btn btn-warning">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mt-lg-4 ms-5">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Your Profile</h3>
+                                </div>
+                                <div class="card mb-3" style="max-width: 400px;">
+                                    <div class="row g-0">
+                                        <div class="col-md-5 mt-lg-4 offset-1">
+                                            <img src="<?php echo asset($udata['image']); ?>" class="img-fluid rounded-start" alt="You Buy">
+                                        </div>
+                                        <div class="col-md offset-0 mt-lg-2">
+                                            <div class="card-body">
+                                                <table>
+                                                    <tr>
+                                                        <td class="card text-white bg-dark mb-2">Name:<?php echo $udata['name']; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="card text-white bg-dark mb-2">Username:<?php echo $udata['username']; ?><td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="card text-white bg-dark mb-2">Email:<?php echo $udata['email']; ?></td>
+                                                    </tr>
+                                                </table>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="edit.php" class="btn btn-primary">Edit Profile</a>
+                                    <a href="<?php echo $baseUrl; ?>index.php/user/login" class="btn btn-warning">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <!-- /.card -->
